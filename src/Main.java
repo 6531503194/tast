@@ -2,7 +2,7 @@ class Animal{
     String type = "animal";
     int age = 0;
     public void sound(){
-        System.out.println( type + " which age is " + age +" make -----");
+        System.out.println( type + " which age is " + age +" make -----.");
     }
 }
 class Cat extends Animal{
@@ -10,14 +10,14 @@ class Cat extends Animal{
     int age = 3 ;
     @Override
     public void sound(){
-        System.out.println(type + " which age is " + age +" make -----");
+        System.out.println(type + " which age is " + age +" make mowww");
     }
 }
 class Dog extends Animal{
     String type = "Dog";
     int age = 6;
     public void sound(){
-        System.out.println(type + " which age is " + age +" make -----");
+        System.out.println(type + " which age is " + age +" make wooff");
     }
 }
 
