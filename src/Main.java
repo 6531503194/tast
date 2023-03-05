@@ -1,42 +1,48 @@
 class Animal{
     String type = "animal";
-    public void sound(Animal a){
-        System.out.println("Type " + this.type);
-        //System.out.println();
+    int age = 0;
+    public void sound(){
+        System.out.println( type + " which age is " + age +" make -----");
     }
 }
 class Cat extends Animal{
     String type = "cat";
+    int age = 3 ;
     @Override
-    public void sound(Animal a){
-        System.out.println("Type " + this.type);
+    public void sound(){
+        System.out.println(type + " which age is " + age +" make -----");
     }
 }
 class Dog extends Animal{
-    String type = "dog";
-    public void sound(Animal a){
-        System.out.println("Type " + this.type);
+    String type = "Dog";
+    int age = 6;
+    public void sound(){
+        System.out.println(type + " which age is " + age +" make -----");
     }
 }
-class DayCare{
-    public void daycare(Object a){
+
+class AnimalMore{
+
+    public void more(Object a){
         if(a instanceof Animal){
             Animal other = (Animal) a;
-            System.out.println("hello " + ((Animal) a).type);
-        } else if (a instanceof Cat) {
-            Cat other = (Cat) a ;
-            System.out.println("Hello " + ((Cat) a).type);
+            System.out.println(other.type + " is collected by others.");
+        }
+        else if(a instanceof Cat){
+            Cat other = (Cat) a;
+            System.out.println(other.type + " is collected by others.");
+        }else{
+            Dog other = (Dog) a;
+            System.out.println(other.type + " is collected by others.");
         }
 
     }
 }
 class Main{
     public static void main(String[] args){
-        Cat c = new Cat();
-        Dog d = new Dog();
-        DayCare test = new DayCare();
-       // System.out.println(test.daycare(c));
-        test.daycare(c);
-        c.sound(c);
+       Cat c = new Cat();
+       AnimalMore m = new AnimalMore();
+        m.more(c);
+
     }
 }
