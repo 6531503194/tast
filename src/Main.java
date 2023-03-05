@@ -24,15 +24,16 @@ class Dog extends Animal{
 class AnimalMore{
 
     public void more(Object a){
-        if(a instanceof Animal){
-            Animal other = (Animal) a;
-            System.out.println(other.type + " is collected by others.");
-        }
-        else if(a instanceof Cat){
+
+        if(a instanceof Cat){
             Cat other = (Cat) a;
             System.out.println(other.type + " is collected by others.");
-        }else{
+        }else if(a instanceof Dog){
             Dog other = (Dog) a;
+            System.out.println(other.type + " is collected by others.");
+        }
+        else if(a instanceof Animal){
+            Animal other = (Animal) a;
             System.out.println(other.type + " is collected by others.");
         }
 
@@ -43,7 +44,7 @@ class Main{
        Cat c = new Cat();
        c.sound();
        AnimalMore m = new AnimalMore();
-        m.more(new Animal());
+       m.more(c);
 
     }
 }
