@@ -41,8 +41,9 @@ class AnimalMore{
 class Main{
     public static void main(String[] args){
        Cat c = new Cat();
+       c.sound();
        AnimalMore m = new AnimalMore();
-        m.more(c);
+        m.more(new Animal());
 
     }
 }
