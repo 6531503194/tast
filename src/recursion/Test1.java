@@ -8,14 +8,14 @@ public class Test1 {
         }else if((n%10) == 8){
             i++;
             if((n/10)%10 == 8){
-                i*=i;
+                i*=2;//fix here
             }
         }
         return i + count8(n/10);
     }
     public static void main(String[] args){
         System.out.println(count8(80258));
-        System.out.println(count8(888));
+        System.out.println(count8(8818));
     }
 }
 
