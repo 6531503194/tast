@@ -87,10 +87,11 @@ class Solution
         last.data+=1;
         if(last.data>=10)
         {
-            last.data%=10;
+
             if(last==head)
                 return;
             else
+                last.data%=10;
                 theRealAddOne(head,getPrev(head,last));
         }
     }
