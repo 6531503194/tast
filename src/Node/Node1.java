@@ -80,7 +80,7 @@ class Solution
         if(prev.data +1>=10){
         while(prev.data+1>=10){
 
-            prev.data = prev.data-10;
+            prev.data = prev.data%10;
             if(prev!=head) {
                 prev.next.data += 1;
                 prev = prev.next;
