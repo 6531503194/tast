@@ -8,6 +8,7 @@ class Node
     int data;
     Node next;
 
+
     Node(int x)
     {
         data = x;
@@ -16,6 +17,7 @@ class Node
 }
 class GfG
 {
+
     public static void printList(Node node)
     {
         while (node != null)
@@ -62,52 +64,43 @@ class Node{
 
 class Solution
 {
-    public static Node addOne(Node head)
+    public  Node getPrev(Node head,Node n)
+    {
+        Node j=null;
+        for(Node h=head;h!=n;h=h.next)
+        {
+            j=h;
+        }
+        return j;
+    }
+    public Node getLast(Node head)
+    {
+        Node last=null;
+        for(Node h=head;h!=null;h=h.next)
+        {
+            last=h;
+        }
+        return last;
+    }
+    public void theRealAddOne(Node head, Node last)
+    {
+        last.data+=1;
+        if(last.data>=10)
+        {
+            last.data%=10;
+            if(last==head)
+                return;
+            else
+                theRealAddOne(head,getPrev(head,last));
+        }
+    }
+
+
+    public  Node addOne(Node head)
     {
         //code here.
-
-        Node p = head;
-        Node temp = head;Node prev = null; Node next = null;
-        while(temp!=null){
-
-            next = temp.next;
-            temp.next = prev;
-            prev = temp;
-            temp = next;
-
-
-        }
-        if(prev.data +1>=10){
-        while(prev.data+1>=10){
-
-            prev.data = prev.data%10;
-            if(prev!=head) {
-                prev.next.data += 1;
-                prev = prev.next;
-            }
-            else{
-                prev.data = prev.data+1;
-            }
-        }
-        }else{
-            prev.data+=1;
-        }
-
-        head = prev;
-
-        Node temp1 = head;Node prev1 = null; Node next1 = null;
-        while(temp1!=null){
-
-            next1 = temp1.next;
-            temp1.next = prev1;
-            prev1 = temp1;
-            temp1 = next1;
-
-
-        }
-        head = prev1;
-
-
+        Node last=getLast(head);
+        this.theRealAddOne(head,last);
         return head;
 
     }

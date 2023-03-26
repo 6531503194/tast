@@ -48,9 +48,9 @@ public class GamePannel extends JPanel {
             System.out.println("FPS " + frame);
             frame=0;
         }
-        repaint();
+        //repaint();
     }
-    public void updateRact(){
+    public void updateRact(){//changing position and direction
         xDalta += XDir;
         if(xDalta>400 || xDalta <0){
             XDir*=-1;
@@ -63,7 +63,7 @@ public class GamePannel extends JPanel {
         }
     }
 
-    private Color getRndColor() {
+    private Color getRndColor() {// for changing color
         int r = random.nextInt(255);
         int b = random.nextInt(255);
         int g = random.nextInt(255);

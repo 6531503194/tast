@@ -19,7 +19,7 @@ public class Game implements Runnable {
     }
     @Override
     public void run() {
-        double timePerFrame = 1000000000.0/set_FPS;
+        double timePerFrame = 1000000000.0/set_FPS;//nano second
         long lastFrame = System.nanoTime();
         long now =System.nanoTime();
 
