@@ -65,6 +65,7 @@ class Solution
     public static Node addOne(Node head)
     {
         //code here.
+
         Node p = head;
         Node temp = head;Node prev = null; Node next = null;
         while(temp!=null){
@@ -78,9 +79,15 @@ class Solution
         }
         if(prev.data +1>=10){
         while(prev.data+1>=10){
+
             prev.data = prev.data-10;
-            prev.next.data+=1;
-            prev = prev.next;
+            if(prev!=head) {
+                prev.next.data += 1;
+                prev = prev.next;
+            }
+            else{
+                prev.data = prev.data+1;
+            }
         }
         }else{
             prev.data+=1;
@@ -105,3 +112,5 @@ class Solution
 
     }
 }
+//Enter the first num which will be neglected
+//Enter the number again to add one
